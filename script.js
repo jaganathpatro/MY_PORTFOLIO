@@ -82,37 +82,6 @@ function isElementInViewport(el) {
     );
 }
 
-// Contact Form Handling
-const contactForm = document.getElementById('contact-form');
-
-contactForm?.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(contactForm);
-    const submitButton = contactForm.querySelector('.form-submit');
-    const originalButtonText = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
-    submitButton.disabled = true;
-
-    fetch(contactForm.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-        if (response.ok) {
-            alert('Message sent successfully!');
-            contactForm.reset();
-        } else {
-            throw new Error('Failed to send message');
-        }
-    })
-    .catch(() => alert('Error sending message'))
-    .finally(() => {
-        submitButton.textContent = originalButtonText;
-        submitButton.disabled = false;
-    });
-});
 
 // Glow Elements Animation Fix
 const glowElements = document.querySelectorAll('.glow-element');
@@ -147,7 +116,7 @@ animateGlow();
 particlesJS("particles-js", {
     particles: {
         number: {
-            value: 80,
+            value: 40,
             density: {
                 enable: true,
                 value_area: 800
@@ -167,21 +136,21 @@ particlesJS("particles-js", {
             }
         },
         opacity: {
-            value: 0.5,
+            value: 0.3,
             random: true,
             anim: {
                 enable: true,
-                speed: 0.5,
+                speed: 0.3,
                 opacity_min: 0.1,
                 sync: false
             }
         },
         size: {
-            value: 3,
+            value: 2,
             random: true,
             anim: {
                 enable: true,
-                speed: 5,
+                speed: 3,
                 size_min: 0.1,
                 sync: false
             }
@@ -195,7 +164,7 @@ particlesJS("particles-js", {
         },
         move: {
             enable: true,
-            speed: 3,
+            speed: 2,
             direction: "none",
             random: false,
             straight: false,
@@ -263,31 +232,8 @@ window.addEventListener('scroll', () => {
 scrollToTopBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-// Mobile Menu Toggle Functionality
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-const overlay = document.getElementById('overlay');
 
-// Toggle menu and overlay visibility on button click
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    overlay.classList.toggle('active');
-});
-
-// Close the menu and overlay when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        overlay.classList.remove('active');
-    });
-});
-
-// Close the menu and overlay when clicking outside the menu (on the overlay)
-overlay.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    overlay.classList.remove('active');
-});
-const texts = ["I'M A DEVELOPER.", "I'M A C-CODER.", "I'M A FRONT-END DEVLOPER.","I'M A JAVASCRIPT CODER."];
+const texts = ["I'M A DEVELOPER.", "I'M A C-CODER.", "I'M A FRONT-END DEVLOPER.","I'M A JAVASCRIPT CODER.","I'M A PROBLEM SOLVER."];
 const typingSpeed = 100; // Speed of typing in ms
 const erasingSpeed = 50; // Speed of erasing the text in ms
 const newTextDelay = 2000; // Delay before typing the next text
@@ -300,7 +246,7 @@ const typingElement = document.querySelector('.typing-text');
 // Function to start typing the next text
 function typeText() {
     if (charIndex < texts[textIndex].length) {
-        typingElement.textContent += texts[textIndex].charAt(charIndex);
+        typingElement.textContent = texts[textIndex].substring(0, charIndex);
         charIndex++;
         setTimeout(typeText, typingSpeed);
     } else {
@@ -323,9 +269,79 @@ function eraseText() {
 }
 
 // Start typing the first text
-window.addEventListener('load', () => {
+document.addEventListener("DOMContentLoaded", function () {
+    const typingElement = document.querySelector('.typing-text');
     typingElement.classList.add('cursor-blink');
     typeText();
 });
+/* Add this to your script.js */
+window.addEventListener('load', () => {
+    const loadingScreen = document.querySelector('.loading-screen');
+    loadingScreen.classList.add('hidden');
+});
+// Add this JavaScript
+window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    document.querySelector('.scroll-progress').style.width = scrolled + '%';
+});
+// Contact Form Handling
 
+const contactForm = document.getElementById('contact-form');
+const popup = document.getElementById('popup');
+const closePopup = document.getElementById('closePopup');
+
+contactForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const submitButton = contactForm.querySelector('.form-submit');
+    const originalButtonText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+
+    fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        if (response.ok) {
+            popup.style.display = 'block'; // Show popup
+            contactForm.reset();
+        } else {
+            throw new Error('Failed to send message');
+        }
+    })
+    .catch(() => alert('Error sending message'))
+    .finally(() => {
+        submitButton.textContent = originalButtonText;
+        submitButton.disabled = false;
+    });
+});
+
+// Close popup when clicking OK
+closePopup.addEventListener('click', () => {
+    popup.style.display = 'none';
+});
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
+// Disable Right Click & Inspect Element
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+}, false);
+
+document.addEventListener("keydown", function (e) {
+    if (e.ctrlKey && (e.key === "u" || e.key === "U")) {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && (e.key === "i" || e.key === "I")) {
+        e.preventDefault();
+    }
+    if (e.key === "F12") {
+        e.preventDefault();
+    }
+}, false);
 

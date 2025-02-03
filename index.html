@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <div class="scroll-progress"></div>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B.jaganath patro</title>
@@ -11,45 +12,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <p>Message sent successfully!</p>
+        <button id="closePopup">OK</button>
+    </div>
+</div>
+
 <body>
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="loader-content">
+                <div class="spinner"></div>
+                <p>Loading...</p>
+            </div>
+        </div>
+    </div>
     <!-- Particles Background -->
 <div id="particles-js"></div>
 
     
     <!-- Header -->
-    <header>
+    <header role="banner">
         <div class="nav-container">
-            <div class="logo"><a href="#home">B .Jaganath Patro</a></div>
+            <div class="logo">
+                <a href="#home" aria-label="Go to home section" >B .Jaganath Patro</a>
+            </div>
             
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Home</a></li>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="#home" aria-current="page">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><button class="theme-toggle" id="theme-toggle" >
-                        <span class="toggle-icon">🌙</span>
-                    </button></li>
+                    <li>
+                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                            <span class="toggle-icon" aria-hidden="true">🌙</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
-            
         </div>
-        
     </header>
+    <div class="scroll-progress"></div>
 <!-- Background Overlay -->
-<div id="overlay"></div>
+<!-- <div id="overlay"></div> -->
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Welcome to My Portfolio</h1>
             <p class="hero-description"><b>I Want to explore everything.</b></p>
             <div class="typing-container">
-                <b>  <span class="typing-text"></span></b>
+                <b><span class="typing-text"></span></b>
             </div>
+            
             <br>
             <a href="#contact" class="hero-cta">Get in Touch</a>
         </div>
@@ -61,11 +78,11 @@
         <div class="timeline">
             <div class="event">
                 <h3>2024</h3>
-                <p>Started my journey in tech world in recent past.</p>
+                <p>Started my journey in tech world in recent past</p>
             </div>
             <div class="event">
                 <h3>NOW</h3>
-                <p>Still acquiring knowldge.</p>
+                <p>Still acquiring knowldge</p>
             </div>
         </div>
     </section>
@@ -74,25 +91,35 @@
     <section id="about" class="about">
         <div class="about-container">
             <div class="about-image">
-                <img src="jaga1.jpg" alt="Profile Picture">
+                <img src="photo/jaga.jpg" alt="Profile Picture" loading="lazy">
             </div>
             <div class="about-content">
                 <h2 class="section-title">About Me</h2>
                 
                 <div class="about-text">
-                    <p>Hi there! I'm B.Jaganath Patro, a passionate Electronics and Communication Engineering (ECE) student with a knack for exploring the fascinating world of technology. My journey in ECE has equipped me with a solid foundation in electronics, digital systems, and communication networks, and I’m always eager to dive into the latest tech trends and innovations.</p>
+                    <p>Hello! I am B.Jaganath Patro, a curious and innovative individual with a passion for exploring both the tech and non-tech worlds. Currently, I am pursuing my B.Tech in Electronics and Communication Engineering in my first year at GIET University.</p>
                     <br>
-                    <p>I believe in the power of creativity and problem-solving to bring ideas to life, whether it's designing circuits, coding, or building projects. My goal is to leverage my skills to create impactful solutions in the tech world and beyond.</p>
+                    <p>My mind always has a store of creative ideas and questions. Whenever I get to know something new, a flood of thoughts and questions follow, which compel me to delve deeper and seek to understand things from different aspects. Whether it is technology or anything beyond that, I keep learning, growing, and working towards innovative solutions.</p>
                     <br>
-                    <p>When I'm not experimenting with circuits or coding up something new, you'll find me exploring the latest tech gadgets, honing my coding skills, or simply enjoying a good book.</p>
-                    <br>
-                    <p>Let’s connect and collaborate on exciting projects that push the boundaries of technology!</p>
+                    <p>If you share an interest in technology, problem-solving, or simply love to explore new ideas, feel free to connect with me!</p>
                 </div>
-                <br>
                 <div class="ab-lcon">
-                    <a href="https://www.instagram.com/b_jaganath_patro/"><i class="fa-brands fa-instagram fa-2xl" style="color: #18bdf7;"></i></a>
-                    <a href="https://www.linkedin.com/in/jagannath-patro-940b9b328/"><i class="fa-brands fa-linkedin-in fa-2xl" style="color: #18bdf7;"></i></a>
-                    <a href="https://github.com/jaganathpatro"><i class="fa-brands fa-github fa-2xl" style="color: #18bdf7;"></i></a>
+                    <a href="https://www.instagram.com/b_jaganath_patro/" 
+                       aria-label="Visit my Instagram profile">
+                        <i class="fa-brands fa-instagram fa-2xl" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jagannath-patro-940b9b328/" 
+                       aria-label="Visit my LinkedIn profile">
+                        <i class="fa-brands fa-linkedin-in fa-2xl" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/jaganathpatro" 
+                       aria-label="Visit my GitHub profile">
+                        <i class="fa-brands fa-github fa-2xl" aria-hidden="true"></i>
+                    </a>
+                    <a href="my_resume/Jaganathpatro_resume.pdf" download="B.JaganathPatro_Resume.pdf" >
+                        <button class="p-km" style="border: 0;">Download Resume</button>
+                    </a>
+                    
                 </div>
             </div>
         </div>
@@ -100,60 +127,64 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-        <h2 class="section-title">My Skills</h2>
+        <h2 class="section-title" >My Skills</h2>
         <div class="skills-container">
+            <div class="skill-item glow-card">
+                <h3><i class="fa-solid fa-c fa-2xl" style="color: #18bdf7;"></i></h3>
+                <div class="skill-bar">
+                    <div class="bar">
+                        <div class="progress" data-width="60%"></div>
+                    </div>
+                </div>
+            <h3>C language</h3>
+            </div>
             <div class="skill-item glow-card">
                 <h3><i class="fa-brands fa-html5 fa-2xl" style="color: #18bdf7;"></i></h3>
                 <div class="skill-bar">
                     <div class="bar">
-                        <div class="progress" data-width="40%"></div>
+                        <div class="progress" data-width="80%"></div>
                     </div>
                 </div>
+            <h3>HTML</h3>
             </div>
             <div class="skill-item glow-card">
                 <h3><i class="fa-brands fa-css3-alt fa-2xl" style="color: #18bdf7;"></i></h3>
                 <div class="skill-bar">
                     <div class="bar">
-                        <div class="progress" data-width="45%"></div>
+                        <div class="progress" data-width="50%"></div>
                     </div>
                 </div>
+                <h3>CSS</h3>
             </div>
             <div class="skill-item glow-card">
                 <h3><i class="fa-brands fa-js fa-2xl" style="color: #18bdf7;"></i></h3>
                 <div class="skill-bar">
                     <div class="bar">
-                        <div class="progress" data-width="30%"></div>
+                        <div class="progress" data-width="25%"></div>
                     </div>
                 </div>
-            </div>
-            <div class="skill-item glow-card">
-                <h3><i class="fa-solid fa-c fa-2xl" style="color: #18bdf7;"></i></h3>
-                <div class="skill-bar">
-                    <div class="bar">
-                        <div class="progress" data-width="50%"></div>
-                    </div>
-                </div>
+                <h3>JS</h3>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title" >My Projects</h2>
         <div class="projects-container">
             <div class="project-item glow-card">
                 <h3>Project 1</h3>
                 <p>A responsive web application built with basic technologies.</p>
-                <div >
-                 <a  href="" class="p-km">more..</a>
+                <div class=" glow-card" >
+                 <a  href="#" onclick="location.reload(); return false;" class="p-km">more..</a>
                 </div>
             </div>
             <div class="project-item glow-card">
                 <h3>Project 2</h3>
                 <p>coming soon...</p>
-                <div >
+                <!-- <div >
                     <a  href="" class="p-km">more..</a>
-                   </div>
+                   </div> -->
             </div>
             
         </div>
@@ -164,32 +195,34 @@
     <section id="contact" class="contact">
         <h2 class="section-title">Contact Me</h2>
         <div class="contact-container">
-            <form id="contact-form" class="contact-form" action="https://formspree.io/f/meoqkwlo" method="POST">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" class="glow-input" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" class="glow-input" required>
-                </div>
-                <div class="form-group" style="grid-column: 1 / -1;">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" class="glow-input" required></textarea>
-                </div>
-                <button type="submit" class="form-submit">Send Message</button>
-            </form>
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/meoqkwlo" 
+            method="POST" role="form" aria-label="Contact form">
+          <div class="form-group">
+              <label for="name" id="name-label">Your Name</label>
+              <input type="text" id="name" name="name" class="glow-input" 
+                     required aria-required="true" aria-labelledby="name-label">
+          </div>
+          <div class="form-group">
+              <label for="email" id="email-label">Your Email</label>
+              <input type="email" id="email" name="email" class="glow-input" 
+                     required aria-required="true" aria-labelledby="email-label">
+          </div>
+          <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="message" id="message-label">Message</label>
+              <textarea id="message" name="message" class="glow-input" 
+                        required aria-required="true" aria-labelledby="message-label"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+      </form>
         </div>
     </section>
     <!-- Scroll to Top Button -->
-    <button id="scrollToTopBtn" title="Go to top">↑</button>
-
+    <button id="scrollToTopBtn" aria-label="Scroll to top of page" title="Go to top">↑</button>
     <footer>
-        <p>&copy; 2024<br> B.jaganath patro </p>
+        <p>&copy; 2024 B. Jaganath Patro. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
-    
-
+       
 
 </body>
 </html>
