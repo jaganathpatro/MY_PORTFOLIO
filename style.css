@@ -1316,7 +1316,7 @@ body.dark .project-item {
 }
 .quote-banner {
   text-align: center;
-  margin: 4rem 1rem 2rem;
+  margin: 2rem 1rem 2rem;
   padding: 2rem 1rem;
   animation: fadeIn 1s ease-in-out;
 }
@@ -2115,8 +2115,9 @@ body.light-theme {
   transform: translateY(-2px);
   box-shadow: 0 10px 15px rgba(99, 102, 241, 0.25);
 }
-
 /* Responsive Design */
+
+/* Medium Screens (Tablets & small laptops) */
 @media (max-width: 992px) {
   .about-container {
     gap: 2.5rem;
@@ -2131,30 +2132,178 @@ body.light-theme {
   }
 }
 
+/* Mobile Devices (Tablets, Large Phones) */
 @media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-    padding: 0 1rem;
+  html, body {
+    overflow-x: hidden;
   }
 
-  .about-image {
-    flex: 0 0 auto;
-    width: 70%;
-    max-width: 280px;
-    margin: 0 auto;
+  /* Global Section Styling */
+  .section {
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
   }
 
   .section-title::after {
     margin: 0.6rem auto 0;
   }
 
+  /* ABOUT Section */
+  .about-container {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .about-image {
+    flex: 0 0 auto;
+    width: 70%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .about-content {
+    padding: 1rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    color: var(--text-secondary);
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
   .ab-lcon {
     justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  /* SKILLS Section */
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .skill-item {
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.15);
+  }
+
+  .skill-bar {
+    width: 100%;
+  }
+
+  /* PROJECTS Section */
+  .projects-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .project-item {
+    padding: 1.2rem;
+    text-align: center;
+    border-radius: 16px;
+  }
+
+  .project-images img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .project-buttons .p-km {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    margin: 0.5rem 0.3rem;
+  }
+
+  /* MY THOUGHTS Section */
+  #thoughts .about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding: 0 1rem;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+  }
+
+  /* CONTACT Section */
+  .contact-container {
+    padding: 1rem;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .form-group[style] {
+    grid-column: auto !important;
+  }
+
+  .form-group label {
+    font-size: 0.95rem;
+  }
+
+  .glow-input {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .form-submit {
+    font-size: 1rem;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+  }
+
+  /* TYPING Text Animation */
+  .typing-text {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .cursor {
+    height: 1.2rem;
+    width: 3px;
+  }
+
+  /* TIMELINE */
+  .timeline::before {
+    left: 0;
+  }
+
+  .event {
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto 2rem;
+    text-align: left;
+  }
+
+  .event::before {
+    left: -8px !important;
   }
 }
 
+/* Small Mobile Devices */
 @media (max-width: 480px) {
   .about {
     padding: 3rem 0;
@@ -2167,6 +2316,7 @@ body.light-theme {
 
   .about-image {
     width: 80%;
+    max-width: 200px;
   }
 
   .section-title {
@@ -2185,29 +2335,5 @@ body.light-theme {
   .p-km {
     padding: 0.65rem 1.2rem;
     font-size: 0.95rem;
-  }
-}
-@media (max-width: 768px) {
-  .contact-container {
-    padding: 1.2rem;
-    gap: 1rem;
-  }
-
-  .form-group label {
-    font-size: 0.9rem;
-  }
-
-  .glow-input,
-  .form-submit {
-    font-size: 0.95rem;
-    padding: 0.8rem 1rem;
-  }
-
-  .form-group textarea {
-    min-height: 100px;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
   }
 }
