@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Projects | B. Jaganath Patro</title>
+    <link rel="stylesheet" href="hardware.css">
+    <!-- Font Awesome CDN link for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="B. Jaganath Patro - Developer Portfolio showcasing innovative hardware projects, embedded systems, and IoT solutions.">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            <h1>Hardware Projects</h1>
+            <div class="social-links">
+                <a href="https://github.com/jaganathpatro" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jagannath-patro-940b9b328/" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <p class="header-tagline">Exploring innovation through circuits, sensors and microcontrollers</p>
+    </header>
+    
+    <nav class="filter-nav">
+        <ul>
+            <li data-filter="all" class="active">All Projects</li>
+            <li data-filter="arduino">Arduino</li>
+            <!-- <li data-filter="raspberry-pi">Raspberry Pi</li> -->
+            <li data-filter="iot">IoT</li>
+        </ul>
+    </nav>
+    
+    <section class="gallery">
+        <!-- Project 1: Esp32 LED Patterns -->
+        <div class="gallery-item" data-category="arduino iot">
+            <div class="project-card">
+                <div class="project-media">
+                    <video controls  >
+                        <source src="public/video/esp32_p1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="project-info">
+                    <h2>Esp32 LED Patterns</h2>
+                    <span class="tech-stack">ESP32 | 7-LED</span>
+                     <p>This project showcases dynamic LED patterns using ESP32. It controls multiple LEDs through GPIO pins, demonstrating patterns like blinking, chasing, and waveforms — programmable via the Arduino IDE.</p>
+                    <div class="project-links">
+                        <!-- <a href="#" class="btn btn-code"><i class="fas fa-code"></i> View Code</a> -->
+                        <a href="#" class="btn btn-details" onclick="openProjectDetails('project1')"><i class="fas fa-info-circle"></i> Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Project 2: Set-ReSet And An Osilating Ckt by DC -->
+        <div class="gallery-item" data-category="raspberry-pi iot">
+            <div class="project-card">
+                <div class="project-media">
+              <video controls >
+                 <source src="public/video/iot_p1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>                
+            </div>
+                <div class="project-info">
+                    <h2>Set-ReSet And An Osilating Ckt by DC</h2>
+                    <span class="tech-stack">CAPACITOR | ATRANSISTOR | DIODE</span>
+                    <p>This basic electronics project includes a Set-Reset (SR) latch and a DC-powered oscillator circuit. It demonstrates logic gate fundamentals and how transistor-based circuits can produce clock signals.</p>
+                    <div class="project-links">
+                        <!-- <a href="#" class="btn btn-code"><i class="fas fa-code"></i> View Code</a> -->
+                        <a href="#" class="btn btn-details" onclick="openProjectDetails('project2')"><i class="fas fa-info-circle"></i> Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Project 3: Gesture Controlled Robot -->
+        <!-- <div class="gallery-item" data-category="arduino">
+            <div class="project-card">
+                <div class="project-media">
+                    <video width="100%" height="100%"  poster="public/images/robot-thumb.jpg" onclick="playPauseVideo(this)">
+                        <source src="public/video/iot_p1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="play-button"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="project-info">
+                    <h2>Gesture Controlled Robot</h2>
+                    <span class="tech-stack">Arduino | MPU6050 | HC-05 Bluetooth</span>
+                    <p>A robotic platform that responds to hand gestures detected by a motion sensor glove, with wireless communication.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-code"><i class="fas fa-code"></i> View Code</a>
+                        <a href="#" class="btn btn-details" onclick="openProjectDetails('project3')"><i class="fas fa-info-circle"></i> Details</a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        
+        <!-- Project 4: Smart Plant Monitor -->
+        <!-- <div class="gallery-item" data-category="raspberry-pi iot">
+            <div class="project-card">
+                <div class="project-media">
+                    <img src="public/images/placeholder-plant-monitor.jpg" alt="Smart Plant Monitor" onclick="openModal(this.src)">
+                </div>
+                <div class="project-info">
+                    <h2>Smart Plant Monitor</h2>
+                    <span class="tech-stack">Raspberry Pi Zero | Soil Sensors | Solar Powered</span>
+                    <p>Self-sustaining plant monitoring system that tracks soil moisture, light levels, and automatically waters when needed.</p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-code"><i class="fas fa-code"></i> View Code</a>
+                        <a href="#" class="btn btn-details" onclick="openProjectDetails('project4')"><i class="fas fa-info-circle"></i> Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     -->
+    <!-- Image Modal -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="modalCaption"></div>
+    </div>
+    
+    <!-- Project Details Modals -->
+    <div id="project1" class="project-modal">
+        <div class="project-modal-content">
+            <span class="close" onclick="closeProjectDetails('project1')">&times;</span>
+            <h2>ESP32 LED Pattern Display</h2>
+<div class="project-modal-body">
+    <!-- <div class="project-images">
+        <img src="public/images/esp32-led1.jpg" alt="ESP32 LED Pattern Circuit">
+        <img src="public/images/esp32-led2.jpg" alt="LED Sequence Demo">
+    </div> -->
+    <div class="project-description">
+        <h3>Project Overview</h3>
+        <p>This ESP32-based project demonstrates multiple LED patterns using digital output pins. The patterns include running lights, blinking effects, and symmetrical animations, which can be extended using WiFi control for real-time changes.</p>
+
+        <h3>Technical Details</h3>
+        <ul>
+            <li><strong>Microcontroller:</strong> ESP32</li>
+            <li><strong>IDE:</strong> Arduino IDE</li>
+            <li><strong>LEDs:</strong> 7x LEDs with 220Ω resistors</li>
+            <li><strong>Power:</strong> USB 5V / Battery</li>
+            <li><strong>Control:</strong> Hardcoded + WiFi (optional)</li>
+        </ul>
+
+        <h3>Challenges & Solutions</h3>
+        <p>Precise timing between LED transitions was optimized using `delay()` and non-blocking code structures. Debouncing switches was also considered for real-time control.</p>
+
+        <h3>Future Improvements</h3>
+        <p>Integration of a mobile app interface for pattern selection and custom animation upload via OTA update.</p>
+    </div>
+</div>
+
+        </div>
+    </div>
+    
+    <!-- Similar project detail modals for other projects -->
+    <!-- Project 2 Details Modal -->
+  <div id="project2" class="project-modal">
+    <div class="project-modal-content">
+        <span class="close" onclick="closeProjectDetails('project2')">&times;</span>
+        <h2>Set-Reset and Oscillating Circuit</h2>
+        <div class="project-modal-body">
+            <!-- <div class="project-images">
+                <img src="public/images/sr-ckt1.jpg" alt="SR Latch Breadboard">
+                <img src="public/images/oscillator-ckt2.jpg" alt="Oscillator Circuit">
+            </div> -->
+            <div class="project-description">
+                <h3>Project Overview</h3>
+                <p>This hardware project combines a Set-Reset latch (using logic gates or transistors) with a simple oscillating circuit powered by DC. It demonstrates the principles of digital memory and signal generation.</p>
+
+                <h3>Technical Details</h3>
+                <ul>
+                    <li><strong>Components:</strong> NPN Transistors, Resistors, Capacitors</li>
+                    <li><strong>Logic:</strong> SR latch using NOR/NAND gates</li>
+                    <li><strong>Oscillation:</strong> Astable multivibrator using BJTs</li>
+                    <li><strong>Power:</strong> 9V Battery or DC supply</li>
+                    <li><strong>Tools:</strong> Breadboard and Multimeter</li>
+                </ul>
+
+                <h3>Challenges & Solutions</h3>
+                <p>Stability of oscillation was a key challenge. Correct resistor-capacitor combinations ensured smooth clock pulses. Using LEDs helped visualize signal output from the circuit.</p>
+
+                <h3>Future Improvements</h3>
+                <p>Plan to add push-button debounced triggers for SR control and a logic analyzer for real-time visualization of output states.</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <footer>
+        <p>&copy; 2025 B. Jaganath Patro | Hardware Enthusiast & Developer</p>
+        <p>Built with <i class="fas fa-heart"></i> and lots of solder</p>
+    </footer>
+    
+   
+    
+    <script src="hardware.js"></script>
+</body>
+ 
+</html>
