@@ -1,6 +1,6 @@
 // Theme Toggle Functionality
   const themeToggle = document.getElementById('theme-toggle');
-  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: light)');
   
   // Check for saved theme preference or use system preference
   const savedTheme = localStorage.getItem('theme');

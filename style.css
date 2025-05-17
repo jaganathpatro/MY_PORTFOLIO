@@ -2187,3 +2187,27 @@ body.light-theme {
     font-size: 0.95rem;
   }
 }
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .glow-input,
+  .form-submit {
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .form-group textarea {
+    min-height: 100px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
